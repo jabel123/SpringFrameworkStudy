@@ -19,10 +19,8 @@ public class MyBeanTest {
 	ApplicationContext ac;
 
 	@Test
-	public void myTestMethodTest() {
-		
+	public void myTestMethodTest() {	
 		MyBean myBean = (MyBean) ac.getBean("myBean");
-
 		assertThat("test", is(myBean.myTestMethod()));
 	}
 }

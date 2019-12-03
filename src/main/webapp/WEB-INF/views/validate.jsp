@@ -8,11 +8,9 @@
 	<title>Home</title>
 </head>
 <body>
-
 <h1>
-	Hello world! ${role}  
+	My Name is validator ${mappingResult }
 </h1>
 
-<P> 주현태 The time on the server is ${serverTime}. </P>
 </body>
 </html>

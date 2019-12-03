@@ -15,7 +15,7 @@ import com.copocalypse.www.vo.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = {"classpath:config/*-context.xml","file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
+@ContextConfiguration(locations = {"classpath:config/*-context.xml","classpath:web-context.xml"})
 public class UserDaoTest {
 
 	@Autowired
@@ -26,7 +26,7 @@ public class UserDaoTest {
 	@Test
 	public void getUserTest() {
 		User user=dao.getUser(1);
-		assertThat(user.getName(), is("ÁÖÇöÅÂ"));
+		assertThat(user.getName(), is("ì£¼í˜„íƒœ"));
 		assertThat(user.getAge(), is(30));
 	}
 }

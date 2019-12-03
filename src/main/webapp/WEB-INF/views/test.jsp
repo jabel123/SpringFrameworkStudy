@@ -8,11 +8,9 @@
 	<title>Home</title>
 </head>
 <body>
-
 <h1>
-	Hello world! ${role}  
 </h1>
 
-<P> 주현태 The time on the server is ${serverTime}. </P>
+<P> JSP 페이지를 Controller가 아닌 XML에서 선언된 url매핑을 통해서 연결되도록 함.</P>
 </body>
 </html>

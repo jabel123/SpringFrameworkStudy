@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="myBean" class="com.copocalypse.www.util.MyBean" />
+
+	<aop:config>
+		<aop:pointcut id="beanAdvicePointcut" expression="execution(* *..*.MyBean.myTestMethod(..))"/>
+		<aop:advisor advice-ref="myBeanAdvice" pointcut-ref="beanAdvicePointcut"/>
+	</aop:config>
 	
-	<bean id="myBean" class="com.copocalypse.www.util.MyBean"/>
-			
+	
+	<bean id="myBeanAdvice" class="com.copocalypse.www.aop.MyBeanAdvice"/>
+
 </beans>
