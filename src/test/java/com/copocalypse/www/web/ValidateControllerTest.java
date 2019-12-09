@@ -17,7 +17,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.copocalypse.www.vo.User;
 import com.copocalypse.www.web.testutil.ConfigurableDispatcherServlet;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -37,20 +36,20 @@ public class ValidateControllerTest {
 		
 		servlet.service(req, res);
 		ModelAndView mav = servlet.getModelAndView();
-		boolean mappingResult=(boolean) mav.getModel().get("mappingResult");
+		Boolean mappingResult=(Boolean) mav.getModel().get("mappingResult");
 		assertThat(mappingResult, is(false));
 		
 		req.addParameter("name", "ju");
 		servlet.service(req, res);
 		mav = servlet.getModelAndView();
-		mappingResult=(boolean) mav.getModel().get("mappingResult");
+		mappingResult=(Boolean) mav.getModel().get("mappingResult");
 		assertThat(mappingResult, is(false));
 		
 		
 		req.addParameter("age", "30");
 		servlet.service(req, res);
 		mav = servlet.getModelAndView();
-		mappingResult=(boolean) mav.getModel().get("mappingResult");
+		mappingResult=(Boolean) mav.getModel().get("mappingResult");
 		assertThat(mappingResult, is(true));
 		
 		

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.copocalypse.www.dao.UserDao;
 import com.copocalypse.www.vo.User;
@@ -58,6 +57,8 @@ public class UserServiceTest {
 	
 	@Service("testUserService")
 	static class TestUserService extends UserServiceImpl{
+		
+		
 		private String name="한승연";
 		@Override
 		public void addUser(User user) {
@@ -66,5 +67,10 @@ public class UserServiceTest {
 		}
 	}
 
-	static class TestUserServiceException extends RuntimeException{}
+	static class TestUserServiceException extends RuntimeException{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;}
 }
