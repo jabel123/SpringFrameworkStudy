@@ -6,4 +6,19 @@
 		SELECT id,name,age from user
 		where id=#{id}
 	</select>
+	
+	<insert id="insertUser" parameterType="User">
+		INSERT INTO user(name, age) 
+		values(#{name},#{age})		
+	</insert>
+	
+	<update id="updateStatistic">
+		update statistic set count=count+1
+		where tablename='user'
+	</update>
+	
+	<select id="selectStatistic" resultType="Int">
+		select count from statistic
+		where tablename='user'		
+	</select>
 </mapper>

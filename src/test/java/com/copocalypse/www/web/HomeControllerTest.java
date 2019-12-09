@@ -52,5 +52,4 @@ public class HomeControllerTest extends AbstractDispatcherServletTest {
 		User user = (User) mav.getModel().get("user");
 		assertThat(user.getName(), is("주현태"));
 	}
-
 }

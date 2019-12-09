@@ -16,4 +16,23 @@ public class UserDaoImpl implements UserDao {
 		User user = sqlSession.selectOne("user.selectUser", uerId);
 		return user;
 	}
+
+	@Override
+	public int addUser(User user) {
+		int result=sqlSession.insert("user.insertUser", user);
+		return result;
+	}
+
+	@Override
+	public int addStatistic() {
+		int result=sqlSession.update("user.updateStatistic");
+		return result;
+	}
+
+	@Override
+	public int getStatistic() {
+		int result=sqlSession.selectOne("user.selectStatistic");
+		
+		return result;
+	}
 }
